@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import HeaderSection from './components/headerSection';
+import Gameboard from './components/Gameboard';
 
 const styles = StyleSheet.create({
   container: {
@@ -31,12 +31,7 @@ export default class Game extends Component {
       <View style={styles.container}>
         <HeaderSection />
         <View style={{ flex: 3 }}>
-          <Text style={styles.welcome}>
-            Welcome to WACK IT!
-          </Text>
-          <Text style={styles.instructions}>
-            WACK A MOLE
-          </Text>
+          <Gameboard />
         </View>
       </View>
     );
