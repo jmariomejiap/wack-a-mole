@@ -3,6 +3,7 @@ import { HIT, MISSED } from './actions';
 
 const initialState = {
   points: 0,
+  board: [false, true, false, false, true, false, false, false, false],
 };
 
 const gameReducer = (state = initialState, action) => {

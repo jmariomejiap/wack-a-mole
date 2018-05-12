@@ -1,10 +1,9 @@
 export const HIT = 'HIT';
 export const MISSED = 'MISSED';
 
-const moleWacked = (position) => {
+const moleWacked = () => {
   return {
     type: HIT,
-    position,
   };
 };
 

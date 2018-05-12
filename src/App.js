@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   View,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 
 // eslint-disable-next-line
-export default class Game extends Component {
+export default class Game extends React.Component {
   render() {
     return (
       <View style={styles.container}>
