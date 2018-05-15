@@ -2,6 +2,13 @@
 
 **Whac-A-Mole** was built using React Native, Redux.
 
+## Demo.
+
+![whac-a-mole-demo](https://user-images.githubusercontent.com/22829270/40080988-8e339a34-5841-11e8-96df-202869472e8c.gif)
+
+
+
+
 ## Getting Started
 #### Game Instructions
 
