@@ -7,9 +7,9 @@
 
 Fun and easy.
 
-*  You must Hit a Mole to gain 1 point.
-*  If you Missed a Mole you will lose 3 points.
-*  You have 2 minutes to Whac as many Moles as you can.
+*  You must hit a mole to gain 1 point.
+*  If you missed a mole you will lose 3 points.
+*  You have 2 minutes to whack as many Moles as you can.
 
 
 #### Installation
