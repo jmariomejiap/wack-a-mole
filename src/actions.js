@@ -1,5 +1,12 @@
 export const HIT = 'HIT';
 export const MISSED = 'MISSED';
+export const GAMEON = 'GAMEON';
+
+const gameControl = () => {
+  return {
+    type: GAMEON,
+  };
+};
 
 const moleWacked = () => {
   return {
@@ -13,4 +20,4 @@ const moleMissed = () => {
   };
 };
 
-export { moleWacked, moleMissed };
+export { gameControl, moleWacked, moleMissed };

@@ -1,23 +1,31 @@
 import { combineReducers } from 'redux';
-import { HIT, MISSED } from './actions';
+import { HIT, MISSED, GAMEON } from './actions';
 
 const initialState = {
-  points: 0,
   board: [false, true, false, false, true, false, false, false, false],
+  gameOn: true,
+  score: 0,
+  time: '2:00',
 };
 
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GAMEON:
+      return {
+        ...state,
+        gameOn: !state.gameOn,
+      };
+
     case HIT:
       return {
         ...state,
-        points: state.points + 1,
+        score: state.score + 1,
       };
 
     case MISSED:
       return {
         ...state,
-        points: state.points - 3,
+        score: state.score - 3,
       };
 
     default:

@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   mole: {
     zIndex: 1,
     position: 'absolute',
-    // backgroundColor: 'red',
     bottom: -8,
     right: 12,
     left: -12,
@@ -23,8 +22,12 @@ const styles = StyleSheet.create({
   },
 });
 
-const MoleInHole = ({ dispatch, board, boardIndex }) => {
+/* eslint-disable-next-line */
+const MoleInHole = ({ dispatch, board, boardIndex, gameOn }) => {
   const handleTap = () => {
+    if (!gameOn) {
+      return null;
+    }
     if (board[boardIndex]) {
       console.log('true moleWached');
       return dispatch(moleWacked());
@@ -47,13 +50,15 @@ const MoleInHole = ({ dispatch, board, boardIndex }) => {
 const mapStateToProps = (store) => {
   return {
     board: store.gameReducer.board,
+    gameOn: store.gameReducer.gameOn,
   };
 };
 
 MoleInHole.propTypes = {
   dispatch: PropTypes.func.isRequired,
   board: PropTypes.array.isRequired,
-  boardIndex: PropTypes.isRequired,
+  gameOn: PropTypes.bool.isRequired,
+  boardIndex: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(MoleInHole);

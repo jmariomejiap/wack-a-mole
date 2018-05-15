@@ -6,6 +6,8 @@ import {
   Dimensions,
   StyleSheet,
 } from 'react-native';
+import TimerBox from './timerBox';
+import ScoreBox from './scoreBox';
 
 const { width } = Dimensions.get('window');
 
@@ -28,6 +30,8 @@ const styles = StyleSheet.create({
 
 const HeaderSection = () => (
   <View style={styles.container}>
+    <ScoreBox />
+    <TimerBox />
     <Image
       style={styles.imageBackground}
       source={require('../../assets/game-screen-top.png')}
