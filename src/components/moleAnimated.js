@@ -50,7 +50,7 @@ class Mole extends Component {
       this.animatedValue,
       {
         toValue: 1,
-        duration: 1300, // 2000
+        duration: 1000, // 2000
         easing: Easing.linear,
       },
     ).start((a) => {

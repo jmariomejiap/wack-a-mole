@@ -3,7 +3,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { View, Text, Image, StyleSheet, AlertIOS } from 'react-native';
-// import TimerCountdown from 'react-native-timer-countdown';
 import { gameControl } from '../actions';
 
 
@@ -31,19 +30,30 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      minutes: 0,
-      seconds: 10,
+      minutes: 1,
+      seconds: 59,
       gameOver: false,
     };
   }
 
-  /* eslint-disable-next-line */
+  componentDidMount() {
+    this.intervalId = setInterval(this.handleTimer, 1000);
+    this.props.dispatch(gameControl());
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+
   handleTimer = () => {
+    const { dispatch } = this.props;
     const { minutes, seconds } = this.state;
+
     if (minutes === 0 && seconds === 0) {
       this.setState({ gameOver: true });
       clearInterval(this.intervalId);
-      this.props.dispatch(gameControl());
+      dispatch(gameControl());
       return;
     }
     if (seconds > 0) {
@@ -53,20 +63,6 @@ class Timer extends React.Component {
       this.setState({ minutes: 0, seconds: 60 });
     }
   }
-
-  componentDidMount() {
-    if (this.state.gameOver) {
-      this.props.dispatch(gameControl());
-      this.intervalId = setInterval(this.handleTimer, 1000);
-    }
-
-    // this.setState({ timer }, () => console.log('setint timer = ', timer));
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.intervalId);
-  }
-
 
   render() {
     const { minutes, seconds, gameOver } = this.state;
@@ -80,7 +76,7 @@ class Timer extends React.Component {
   }
 }
 
-// const mapStateToProps = (store)
+
 Timer.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };

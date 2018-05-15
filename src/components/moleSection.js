@@ -29,7 +29,11 @@ const MoleSection = ({ index, board, gameOn, dispatch }) => {
   const MoleIsActive = board[index];
 
   // points given only if user taps on Mole.
-  const handleBadTap = () => dispatch(moleMissed());
+  const handleBadTap = () => {
+    if (gameOn) {
+      dispatch(moleMissed());
+    }
+  };
 
   return (
     <TouchableOpacity

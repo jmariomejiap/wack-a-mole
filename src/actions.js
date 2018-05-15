@@ -1,6 +1,7 @@
 export const HIT = 'HIT';
 export const MISSED = 'MISSED';
 export const GAMEON = 'GAMEON';
+export const ACTIVATE_MOLE = 'ACTIVATE_MOLE';
 
 const gameControl = () => {
   return {
@@ -20,4 +21,11 @@ const moleMissed = () => {
   };
 };
 
-export { gameControl, moleWacked, moleMissed };
+const generateRandomMole = () => {
+  return {
+    type: ACTIVATE_MOLE,
+    moleIndex: Math.floor(Math.random() * Math.floor(10)),
+  };
+};
+
+export { gameControl, moleWacked, moleMissed, generateRandomMole };
