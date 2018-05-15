@@ -10,7 +10,7 @@ import {
   Easing,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { moleWacked } from '../actions';
+import { moleWacked } from '../../actions';
 
 const styles = StyleSheet.create({
   containerAnimation: {
@@ -62,7 +62,6 @@ class Mole extends Component {
 
   handleTap() {
     const { dispatch } = this.props;
-
     if (this.state.moleVisible) {
       return dispatch(moleWacked());
     }
@@ -96,7 +95,7 @@ class Mole extends Component {
               style={{ position: 'relative' }}
               onPress={this.handleTap}
             >
-              <Image style={styles.holeImage} source={require('../../assets/mole.png')} resizeMode="contain" />
+              <Image style={styles.holeImage} source={require('../../../assets/mole.png')} resizeMode="contain" />
             </TouchableOpacity>
           </View>
         </Animated.View>
@@ -111,7 +110,7 @@ class Mole extends Component {
           }}
         >
           <View style={{ position: 'relative' }}>
-            <Image style={styles.holeImage} source={require('../../assets/holeMask.png')} resizeMode="contain" />
+            <Image style={styles.holeImage} source={require('../../../assets/holeMask.png')} resizeMode="contain" />
           </View>
         </Animated.View>
       </View>

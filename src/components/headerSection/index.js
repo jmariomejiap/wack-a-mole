@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width,
-    backgroundColor: 'lightgrey',
   },
   imageBackground: {
     flex: 1,
@@ -34,7 +33,7 @@ const HeaderSection = () => (
     <TimerBox />
     <Image
       style={styles.imageBackground}
-      source={require('../../assets/game-screen-top.png')}
+      source={require('../../../assets/game-screen-top.png')}
     />
   </View>
 );

@@ -3,6 +3,7 @@ export const MISSED = 'MISSED';
 export const GAMEON = 'GAMEON';
 export const ACTIVATE_MOLE = 'ACTIVATE_MOLE';
 
+// actionCreator. handles start and end of game.
 const gameControl = () => {
   return {
     type: GAMEON,

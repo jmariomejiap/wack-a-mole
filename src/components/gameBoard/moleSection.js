@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
 import Hole from './hole';
 import MoleAnimated from './moleAnimated';
-import { moleMissed } from '../actions';
+import { moleMissed } from '../../actions';
 
 const styles = StyleSheet.create({
   containerMoleAndHole: {
@@ -63,4 +63,3 @@ const mapStateToProps = (store) => {
 };
 
 export default connect(mapStateToProps)(MoleSection);
-

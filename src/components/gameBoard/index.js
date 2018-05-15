@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 import MoleSection from './moleSection';
-import { generateRandomMole } from '../actions';
+import { generateRandomMole } from '../../actions';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -24,21 +24,21 @@ const styles = StyleSheet.create({
   },
 });
 
+
+// Sets layout and render Mole and its components.
 class GameBoard extends React.Component {
   componentDidMount() {
-    this.intervalId = setInterval(this.activateMole, 1500);
+    this.intervalId = setInterval(this.activateMole, 1300);
   }
 
   activateMole = () => {
     const { dispatch, gameOn } = this.props;
-
     if (gameOn) {
       dispatch(generateRandomMole());
       return;
     }
     clearInterval(this.intervalId);
   }
-
 
   render() {
     return (

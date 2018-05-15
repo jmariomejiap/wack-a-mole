@@ -27,6 +27,6 @@ const styles = StyleSheet.create({
 
 export default () => (
   <View style={styles.containerAnimation}>
-    <Image style={styles.holeImage} source={require('../../assets/hole.png')} resizeMode="contain" />
+    <Image style={styles.holeImage} source={require('../../../assets/hole.png')} resizeMode="contain" />
   </View>
 );

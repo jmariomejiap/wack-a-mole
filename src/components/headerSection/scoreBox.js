@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 const ScoreBox = ({ score }) => (
   <View style={styles.scoreContainer}>
-    <Image style={{ width: 140 }} source={require('../../assets/gameBtn.png')} resizeMode="contain" />
+    <Image style={{ width: 140 }} source={require('../../../assets/gameBtn.png')} resizeMode="contain" />
     <Text style={styles.textScore}>{score}</Text>
   </View>
 );

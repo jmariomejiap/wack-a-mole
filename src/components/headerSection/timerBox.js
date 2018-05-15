@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { View, Text, Image, StyleSheet, AlertIOS } from 'react-native';
-import { gameControl } from '../actions';
+import { gameControl } from '../../actions';
 
 
 const styles = StyleSheet.create({
@@ -68,7 +68,7 @@ class Timer extends React.Component {
     const { minutes, seconds, gameOver } = this.state;
     return (
       <View style={styles.container}>
-        <Image style={{ width: 140 }} source={require('../../assets/gameBtn.png')} resizeMode="contain" />
+        <Image style={{ width: 140 }} source={require('../../../assets/gameBtn.png')} resizeMode="contain" />
         <Text style={styles.textScore}>{`${minutes}:${seconds}`}</Text>
         {gameOver && AlertIOS.alert('Game Over')}
       </View>
