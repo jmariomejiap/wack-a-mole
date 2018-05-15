@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { HIT, MISSED, GAMEON } from './actions';
+import { HIT, MISSED, GAMEON, ACTIVATE_MOLE } from './actions';
 
 const initialState = {
-  board: [false, true, false, false, true, false, false, false, false],
-  gameOn: true,
+  board: [false, false, false, false, false, false, false, false, false],
+  gameOn: false,
   score: 0,
-  time: '2:00',
 };
+
 
 const gameReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -26,6 +26,11 @@ const gameReducer = (state = initialState, action) => {
       return {
         ...state,
         score: state.score - 3,
+      };
+    case ACTIVATE_MOLE:
+      return {
+        ...state,
+        board: state.board.map((value, index) => index === action.moleIndex),
       };
 
     default:
